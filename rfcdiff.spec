@@ -1,7 +1,7 @@
 Summary:	Draft Diff Tool
 Name:		rfcdiff
 Version:	1.41
-Release:	%mkrel 1
+Release:	%mkrel 2
 Group:		Development/Other
 License:	GPLv2+
 URL:		http://tools.ietf.org/tools/rfcdiff/
