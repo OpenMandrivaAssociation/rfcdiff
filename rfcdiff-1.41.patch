@@ -1,0 +1,48 @@
+diff -rNau rfcdiff-1.41/Makefile rfcdiff-1.41-patched/Makefile
+--- rfcdiff-1.41/Makefile	2010-09-16 19:44:50.000000000 +0400
++++ rfcdiff-1.41-patched/Makefile	2011-11-11 15:31:22.000000000 +0400
+@@ -3,5 +3,5 @@
+ 
+ sources += rfcdiff.pyht
+ 
+-include ../Makefile.common
++include Makefile.common
+ 
+diff -rNau rfcdiff-1.41/rfcdiff rfcdiff-1.41-patched/rfcdiff
+--- rfcdiff-1.41/rfcdiff	2011-02-23 14:31:32.000000000 +0300
++++ rfcdiff-1.41-patched/rfcdiff	2011-11-11 15:33:27.000000000 +0400
+@@ -106,7 +106,7 @@
+ export progdate=""
+ export prelines="10"
+ export basename=$(basename $0)
+-export workdir="/tmp/$basename-$$"
++export workdir=`mktemp -d -t rfcdiff.XXXXXXXX`
+ export pagecache1="$workdir/pagecache1"
+ export pagecache2="$workdir/pagecache2"
+ 
+@@ -306,15 +306,15 @@
+ "<!-- Using awk: %s: %s --> \n" \
+ "<!-- Using diff: %s: %s --> \n" \
+ "<!-- Using wdiff: %s: %s --> \n" \
+-"<html> \n" \
++"<html xmlns=\"http:\/\/www.w3.org\/1999\/xhtml\" xml:lang=\"en\" lang=\"en\"> \n" \
+ "<head> \n" \
+ "  <meta http-equiv=\"Content-Type\" content=\"text/html; charset=iso-8859-1\" /> \n" \
+ "  <meta http-equiv=\"Content-Style-Type\" content=\"text/css\" /> \n" \
+ "  <title>Diff: %s - %s</title> \n" \
+ "  <style type=\"text/css\"> \n" \
+-"    body    { margin: 0.4ex; margin-right: auto; } \n" \
++"    body    { font-size:16px; margin: 0.4ex; margin-right: auto; } \n" \
+ "    tr      { } \n" \
+-"    td      { white-space: pre; font-family: monospace; vertical-align: top; font-size: 0.86em;} \n" \
++"    td      { white-space: pre; font-family: Consolas, \"DejaVu Sans Mono\", \"Droid Sans Mono\", Monaco, Monospace; vertical-align: top; font-size: 0.86em;} \n" \
+ "    th      { font-size: 0.86em; } \n" \
+ "    .small  { font-size: 0.6em; font-style: italic; font-family: Verdana, Helvetica, sans-serif; } \n" \
+ "    .left   { background-color: #EEE; } \n" \
+@@ -847,7 +847,6 @@
+ # ----------------------------------------------------------------------
+ # create working directory.
+ # ----------------------------------------------------------------------
+-mkdir $workdir || die "$0: Error: Failed to create temporary directory '$workdir'."
+ mkdir $workdir/1 || die "$0: Error: Failed to create temporary directory '$workdir/1'."
+ mkdir $workdir/2 || die "$0: Error: Failed to create temporary directory '$workdir/2'."
