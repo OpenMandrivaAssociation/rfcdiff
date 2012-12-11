@@ -41,3 +41,14 @@ rm -rf %{buildroot}
 %doc copyright
 %{_mandir}/man1/*
 %{_bindir}/%{name}
+
+%changelog
+* Thu Feb 09 2012 Andrey Ponomarenko <andrey.ponomarenko@rosalab.ru> 1.41-2mdv2012.0
++ Revision: 772321
+- Make HTML output to be valid, corrected font, corrected name of temp directory.
+
+* Fri Dec 23 2011 Andrey Ponomarenko <andrey.ponomarenko@rosalab.ru> 1.41-1
++ Revision: 744816
+- Initial package.
+- Created package structure for rfcdiff.
+
