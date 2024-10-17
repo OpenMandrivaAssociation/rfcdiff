@@ -4,7 +4,7 @@ Version:	1.41
 Release:	3
 Group:		Development/Other
 License:	GPLv2+
-URL:		http://tools.ietf.org/tools/rfcdiff/
+URL:		https://tools.ietf.org/tools/rfcdiff/
 Source0:	http://tools.ietf.org/tools/rfcdiff/rfcdiff-%{version}.tgz
 Patch0:         rfcdiff-1.41.patch
 BuildRequires:	txt2man
