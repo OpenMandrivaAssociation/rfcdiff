@@ -7,6 +7,7 @@ License:	GPLv2+
 URL:		https://tools.ietf.org/tools/rfcdiff/
 Source0:	http://tools.ietf.org/tools/rfcdiff/rfcdiff-%{version}.tgz
 Patch0:         rfcdiff-1.41.patch
+BuildRequires:	make
 BuildRequires:	txt2man
 Requires:       wdiff
 BuildArch:	noarch
