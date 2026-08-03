@@ -1,15 +1,15 @@
 Summary:	Draft Diff Tool
 Name:		rfcdiff
-Version:	1.41
-Release:	3
+Version:	1.49
+Release:	1
 Group:		Development/Other
 License:	GPLv2+
-URL:		https://tools.ietf.org/tools/rfcdiff/
-Source0:	http://tools.ietf.org/tools/rfcdiff/rfcdiff-%{version}.tgz
-Patch0:         rfcdiff-1.41.patch
+URL:		https://github.com/ietf-tools/rfcdiff
+Source0:	https://github.com/ietf-tools/rfcdiff/archive/refs/tags/%{version}.tar.gz#/%{name}-%{version}.tgz
+Patch0:		rfcdiff-1.49.patch
 BuildRequires:	make
 BuildRequires:	txt2man
-Requires:       wdiff
+Requires:	wdiff
 BuildArch:	noarch
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
@@ -21,7 +21,7 @@ page footers are stripped before looking for changes.
 
 %prep
 %setup -q
-%patch0 -p1
+%patch -P0 -p1
 
 %build
 make
